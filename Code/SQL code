@@ -1,0 +1,19 @@
+-- Table: public.logdatabase
+
+-- DROP TABLE public.logdatabase;
+
+CREATE TABLE public.logdatabase
+(
+  date date,
+  "time" time(6) without time zone,
+  devicename character varying(6),
+  type character varying(255),
+  message character varying(255),
+  deviceip character varying(15)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.logdatabase
+  OWNER TO postgres;
+
