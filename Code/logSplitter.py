@@ -19,16 +19,21 @@ for log in logFile:
 			print (logDeviceName)
 			print (logType)
 			print (str(logMessage))
+
 	else:
-
 		logType = log[4]
-		logMessage = ' '.join(log[5:])
+
+		if logType[-1:] == ":":
+			logType = "Null"
+			logMessage = ' '.join(log[4:])
+		else:
+			logMessage = ' '.join(log[5:])
 
 
-		print (logDate)
-		print (logTime)
-		print (logDeviceName)
-		print (logType)
-		print (str(logMessage))
-		
+			print (logDate)
+			print (logTime)
+			print (logDeviceName)
+			print (logType)
+			print (str(logMessage))
+
 logFile.close()

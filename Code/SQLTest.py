@@ -12,9 +12,9 @@ logIP = "'172.210.14.131'"
 
 engine = create_engine('postgresql://postgres:postgres@localhost:5432/Test')
 connection = engine.connect()
-connection.execute("INSERT INTO logdatabase VALUES("+logDate+","+logTime+","+logName+","+logType+","+logMessage+','+logIP+")")
+#connection.execute("INSERT INTO logdatabase VALUES("+logDate+","+logTime+","+logName+","+logType+","+logMessage+','+logIP+")")
 result = connection.execute("SELECT * FROM logdatabase")
 for row in result:
     print('IP:', row['deviceip'], 'Date:', row['date'],"Time:",row['time'],'Device name:',row['devicename'],'Type:',row['type'],'Message:',row['message'])
-#connection.execute("DELETE FROM logdatabase")
+connection.execute("DELETE FROM logdatabase")
 connection.close()
