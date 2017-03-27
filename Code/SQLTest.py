@@ -16,5 +16,5 @@ connection = engine.connect()
 result = connection.execute("SELECT * FROM logdatabase")
 for row in result:
     print('IP:', row['deviceip'], 'Date:', row['date'],"Time:",row['time'],'Device name:',row['devicename'],'Type:',row['type'],'Message:',row['message'])
-connection.execute("DELETE FROM logdatabase")
+#connection.execute("DELETE FROM logdatabase")
 connection.close()
